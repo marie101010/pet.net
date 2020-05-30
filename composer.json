@@ -1,0 +1,16 @@
+{
+    "name": "behaegel/pet_net",
+    "description": "Test",
+    "authors": [
+        {
+            "name": "marie101010",
+            "email": "marie.behaegel@hotmail.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "msb\\": "src/####"
+        }
+    },
+    "require": {}
+}
