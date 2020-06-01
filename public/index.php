@@ -1,31 +1,50 @@
 <?php
+require "../src/bootstrap.php";
 
+$pdo = get_pdo();
+$errors = [];
+
+render('header',['title' => 'Accueil']);
 ?>
-
-<!doctype html>
-<html lang="en">
-    <head>
-        <title>Pet_Accueil</title>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    </head>
-    <body>
-        <div class="container">
+    <style>
+        .button_co{
+    width: 172px;
+    height: 41px;
+    padding: 0px 11px;
+    border-radius: 4px;
+    background-color: #17a2b8;
+    font-family: Roboto;
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-align: center;
+}
+    </style>
+        <h1>Pet.net</h1>
+        <div class="container">  
         <form>
-            <fieldset>
-                <legend>Connexion:</legend> <!-- TO DO: A retirer en front-->
-                <div class="container">
+            <div class="column">
+                <div class="col-sm-6">
                     <div class="form-group">
-                    <label for="">E-mail:</label>
-                        <input type="email" name="email" id="" class="form-control" placeholder="ex: abc@def.com" aria-describedby="helpId">
-                        <label for="">Mot de passe:</label>
-                        <input type="password" name="mdp" id="" class="form-control" placeholder="Mot de passe" aria-describedby="helpId">
-                        <input type="submit"></input>
-                        </div>
-                </fieldset>
+                        <label for="">E-mail</label>
+                        <input id="email" type="email" required class="form-control" name="email">
+                        <?php if (isset($errors['email'])): ?>
+                            <small class="form-text text-muted"><?= $errors['name']; ?></small>
+                        <?php endif ?>
+                    </div>    
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="mdp">Mot de passe</label>
+                        <input id="mdp" type="password" required class="form-control" name="mdp">
+                        <?php if (isset($errors['mdp'])): ?>
+                            <small class="form-text text-muted"><?= $errors['mdp']; ?></small>
+                        <?php endif ?>
+                    </div>    
+                </div>
+            </div>
+                <div class="col-sm-6">
+                    <button class="button_co" type="submit">Me connecter</button>
+                </div>           
             </form>
         </div>

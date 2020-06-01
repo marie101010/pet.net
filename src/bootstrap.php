@@ -1,5 +1,5 @@
 <?php
-require '../autoload.php';
+require '../vendor/autoload.php';
 
 function get_pdo(){
     return new \PDO('mysql:host=localhost;dbname=pet_net;charset=utf8','msb','stagiaire');
