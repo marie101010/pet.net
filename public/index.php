@@ -5,28 +5,44 @@
  * Projet Pet.net
  * Début 25 Mai 2020
  */
-require "../src/bootstrap.php";
+require "../src/bootstrap.php";?>
 
-$pdo = get_pdo();
-$errors = [];
-
-render('header',['title' => 'Accueil']);
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- couleur orange/violet-->
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/united/bootstrap.min.css" rel="stylesheet" integrity="sha384-bzjLLgZOhgXbSvSc5A9LWWo/mSIYf7U7nFbmYIB2Lgmuiw3vKGJuu+abKoaTx4W6" crossorigin="anonymous">
+    <link rel="stylesheet" href="../public/css/style.css">
+    <title><?= isset($title) ? h($title): 'Pet.net'; ?></title>
+</head>
+<body>
+    <nav>
+        <div class="container">        
+            <div class="row">
+                <img src="../public/Pictures/logoO.png" width="64px" height="69px" alt="logo pattes"></a>
+                <h1>Pet.net</h1>
+            </div>
+        </div>
+    </nav>
     <style>
         .button_co{
-    width: 172px;
-    height: 41px;
-    padding: 0px 11px;
-    border-radius: 4px;
-    background-color: #17a2b8;
-    font-family: Roboto;
-    font-size: 16px;
-    color: #ffffff;
-    text-decoration: none solid rgb(255, 255, 255);
-    text-align: center;
-}
+            align-items:center;
+            width: 172px;
+            height: 41px;
+            padding: 0px 11px;
+            border-radius: 4px;
+            
+            background-color: #17a2b8;
+            font-family: Roboto;
+            font-size: 16px;
+            color: #ffffff;
+            text-decoration: none solid rgb(255, 255, 255);
+            text-align: center;
+        }
     </style>
-        <h1>Pet.net</h1>
+
         <div class="container">  
         <form action="ajax.php" method="post">
             <div class="column">
@@ -50,7 +66,7 @@ render('header',['title' => 'Accueil']);
                 </div>
             </div>
                 <div class="col-sm-6">
-                    <button class="button_co" type="submit">Me connecter</button>
+                    <button class="button_co" type="submit" value="Envoyer" id="envoi"</button>
                 </div>           
             </form>
         </div>
@@ -58,14 +74,14 @@ render('header',['title' => 'Accueil']);
     <script>
         $("#envoi").click(function(){
             var email = $("#email").val();
-            var mdp = $("#password").val();
+            var mdp = $("#mdp").val();
             $.ajax({
                 // La ressource ciblée
                 url : 'ajax.php', 
                 // Le type de la requête HTTP.
                 type : 'POST',
                 // La donnée a envoyer
-                data : 'email='+email+'&keypass='+mdp, //+ password, 
+                data : 'email='+email+'&mdp='+mdp, //+ password, 
                 // en cas de succés code_html contient le json renvoyé
                 success: function(response)
                 {

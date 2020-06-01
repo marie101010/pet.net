@@ -22,6 +22,7 @@ if(count($data) > 0){
     session_start();
     $_SESSION['id_u']=$data[0]['id_u'];
     $_SESSION['email']=$data[0]['email'];
+    $_SESSION['mdp']=$data[0]['mdp'];
     // ici on peut ouvrir la session et définir les infos
     echo json_encode(array('success' => 1));
 
