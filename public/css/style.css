@@ -1,5 +1,18 @@
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
 
+html, body {
+    height: 100%;
+    margin: 0; padding: 0;
+}
+body {
+    display : table;
+    width: 100%;
+}
+footer {
+    display : table-row;
+    height: 100px;
+}
+
 .button_co{
     width: 172px;
     height: 41px;
@@ -12,6 +25,7 @@
     text-decoration: none solid rgb(255, 255, 255);
     text-align: center;
 }
+
 
 .form-control__co{
     display:flex;

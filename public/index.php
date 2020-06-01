@@ -21,25 +21,26 @@ require "../src/bootstrap.php";?>
     <nav>
         <div class="container">        
             <div class="row">
-                <img src="../public/Pictures/logoO.png" width="64px" height="69px" alt="logo pattes"></a>
+                <img src="../public/Pictures/logoO.png" padding-left="11px" width="64px" height="69px" alt="logo pattes">
                 <h1>Pet.net</h1>
             </div>
         </div>
     </nav>
     <style>
         .button_co{
-            align-items:center;
+            align-self:center;
             width: 172px;
             height: 41px;
             padding: 0px 11px;
             border-radius: 4px;
-            
             background-color: #17a2b8;
             font-family: Roboto;
             font-size: 16px;
             color: #ffffff;
             text-decoration: none solid rgb(255, 255, 255);
             text-align: center;
+            margin: auto;
+            display: block;
         }
     </style>
 
@@ -66,7 +67,7 @@ require "../src/bootstrap.php";?>
                 </div>
             </div>
                 <div class="col-sm-6">
-                    <button class="button_co" type="submit" value="Envoyer" id="envoi"</button>
+                    <button class="button_co" type="submit" id="envoi">Se connecter</button>
                 </div>           
             </form>
         </div>

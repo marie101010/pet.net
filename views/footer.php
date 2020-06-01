@@ -2,7 +2,7 @@
     .button_footer{
         display:flex;
         align-items: flex-end;
-        justify-content: space-between;
+        justify-content: space-around;
         width: 176px;
         height: 56px;
         padding: 0px 5px;
@@ -13,6 +13,8 @@
         color: #ffffff;
         text-decoration: none solid rgb(255, 255, 255);
         text-align: center;
+        display: block;
+        margin: auto;
 }
     </style>
     <div class="container">
