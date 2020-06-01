@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * @author Marie MSB
+ * Projet Pet.net
+ * Début 25 Mai 2020
+ */
 require "../src/bootstrap.php";
 
 $pdo = get_pdo();
@@ -22,7 +28,7 @@ render('header',['title' => 'Accueil']);
     </style>
         <h1>Pet.net</h1>
         <div class="container">  
-        <form>
+        <form action="../controller/connexion.php" method="post">
             <div class="column">
                 <div class="col-sm-6">
                     <div class="form-group">
