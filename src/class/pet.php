@@ -1,6 +1,6 @@
 <?php
 
-namespace msb;
+//namespace msb;
 
 class Pet{
     
@@ -16,7 +16,7 @@ class Pet{
     private $_vaccins;
     private $_toilettage;
     private $_eau;
-    private $_agressivite;
+    private $_box;
     private $_date_sejour;
     private $_fin_sejour;
     private $_remarques;
@@ -130,11 +130,11 @@ class Pet{
     }
 
     /**
-     * Get the value of _agressivite
+     * Get the value of _box
      */ 
-    public function get_agressivite()
+    public function get_box()
     {
-        return $this->_agressivite;
+        return $this->_box;
     }
 
     /**
@@ -327,13 +327,13 @@ class Pet{
     }
 
     /**
-     * Set the value of _agressivite
+     * Set the value of _box
      *
      * @return  self
      */ 
-    public function set_agressivite($_agressivite)
+    public function set_box($_box)
     {
-        $this->_agressivite = $_agressivite;
+        $this->_box = $_box;
 
         return $this;
     }

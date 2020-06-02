@@ -80,3 +80,19 @@ UXPin Index.html:
 
 </html>
 <!-- random-length HTML comment: YX5juk1VEgMbL7UE4AkwpRu6X7EsIW6euzDeY4xcY91j4LmzJMjwdTtyOxfXIZ12P3UnvFDKC4t6DVtMhS88jpvybQLjpAZ23tdpwgxyYgub0cnVskSSNDGoRPL4NkvFROuDtf1HBkh1AILssdA4eEivRupfSakknSnUxdZwD6mDFxtvOupswMdE4GhMhHwKXYcI1142ye53RmmdWSLJeoLYvskQxVYKr0SirKadpTU457YQPjXrMiF5OnLB6jJnXZJEjhgMy0Fuxd8AATrKzwFDYOEUvN6ImFLJlrUZhZHT0FT0YB9NvEOJRQcCbWLBZULA9fag2hxsnHg9GfL1kZ9zob1FvAHKUQLTtlylIjTtqxrwT0m1Nlq1Ah7viC30SEIBn4mud3bKqI478eyMFeDDA8ygAsUSucRYW1G0sh8Zo0UmVJwYlyclwOHv4cBn2T9PKFD3k9QOzk1ItlhVZ74MJA5Ca6pSPofYriRRhfgVFVdx68GW38gD8bDYXsplUK9BrOQOtwhwF9hC7lWzk20iR35ojkN3sM2ZYGmH1J26IZ8EBS3lKtHbkAEJkRARc0q06S6xcyuiLqmM9dv -->
+
+
+
+    $req = $bdd->prepare('SELECT * FROM pet WHERE id_pet = :id_pet');
+    $req->bindParam(':id_pet', $_GET['id_pet']);
+    $req->execute();
+    $data = $req->fetchAll(\PDO::FETCH_ASSOC);
+    echo json_encode($data);
+------------------------------------------------------------------------
+
+    require_once '../model/manager/PetManager.php';
+$pet=new PetManager();
+$pets=$pet->selectAllPetName($_SESSION['id']);
+<?php foreach ($pets as $value){?>
+ <a class="dropdown-item" href="../vue/fiche_animal.php" > <?= $value=implode($value) ?> </a>
+ <?php } ?
