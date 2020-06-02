@@ -9,6 +9,7 @@ class Events{
     private $_description;
     private $_debut_rdv;
     private $_fin_rdv;
+    private $_start;
     private $_created_by;
     private $_created_at;
     private $_update_by;
@@ -57,6 +58,14 @@ class Events{
     public function get_fin_rdv()
     {
         return $this->_fin_rdv;
+    }
+
+        /**
+     * Get the value of _start
+     */ 
+    public function get_start()
+    {
+        return $this->_start;
     }
 
     /**
@@ -167,4 +176,17 @@ class Events{
 
         return $this;
     }
+
+    /**
+     * Set the value of _start
+     *
+     * @return  self
+     */ 
+    public function set_start($_start)
+    {
+        $this->_start = $_start;
+
+        return $this;
+    }
 }
+
