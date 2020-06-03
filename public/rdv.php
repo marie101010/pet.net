@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require "../src/bootstrap.php";
 
 $pdo = get_pdo();
@@ -26,10 +28,21 @@ render('header',['title' => 'Rendez-vous']);
             color: #ffffff;
             text-decoration: none solid rgb(255, 255, 255);
             text-align: center;
-
-
+        }
+        .navbarrdv{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        
         }
     </style>
+<div class="container">
+    <div class="navbarrdv">
+            <a href="../public/home.php"><img src="../public/Pictures/logoO.png" width="64px" height="69px" alt="logo pattes"></a>
+            <a href="live.php"><input type="button" class="button_validate" value="Accéder au live"input></a>
+    </div>
+</div>
+
 <div class="container">
     <form action="../controller/add_event.php" method="post">
         <p><strong>Je souhaite prendre un rendez-vous de:</strong></p>

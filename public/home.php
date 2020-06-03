@@ -1,7 +1,7 @@
 <?php
-
-require "../src/bootstrap.php";
 session_start();
+require "../src/bootstrap.php";
+
 
 $pdo = get_pdo();
 $errors = [];
@@ -25,7 +25,13 @@ render('header',['title' => 'Accueil']);?>
     margin-bottom: 32px;
 }
 </style>
-<h1>Pet.net</h1>
+<nav>
+    <div class="container">
+        <a href="../public/home.php"><img src="../public/Pictures/logoO.png" width="64px" height="69px" alt="logo pattes"></a>
+        <h1>Pet.net</h1>
+    </div>
+</nav>
+
 <div class="container">
         <div class="column">
             <a href="boxcam.php"><input type="button"  class="button_menu" style= "margin-top:32px;" value="Camera"input></a>

@@ -1,7 +1,7 @@
 <?php
 
 //namespace msb;
-require "../src/bootstrap.php";
+//require "../src/bootstrap.php";
 
 
 class PetManager{
@@ -13,26 +13,45 @@ class PetManager{
         $this->set_pdo();
     }
 
-    public function selectAllPet(){
-        require "../src/class/pet.php";
+    public function selectOnePet($nom_p){
 
             $req=$this-> _pdo->prepare('SELECT * FROM pet WHERE nom_p=:nom_p');
-            $req->bindValue (':nom_p',$_nom_p);
+            $req->bindValue (':nom_p',$nom_p);
             $req->execute();
             $data=$req->fetch(\PDO::FETCH_ASSOC);
                 return $data;
 
     }
 
-    public function updatePet($_eau, $_nourriture, $_fin_sejour, $_toilettage, $_frequence_sortie, $_soins, $_box){
+    public function selectAllPet($id_user){
+
+        $req=$this-> _pdo->prepare('SELECT * FROM pet WHERE id_user=:id_user ');//clef étrangère
+        $req->bindValue (':id_user',$id_user);
+        $req->execute();
+        $data=$req->fetch(\PDO::FETCH_ASSOC);
+            return $data;
+}
+
+    public function selectAllName($id_user){
+
+        $req=$this-> _pdo->prepare('SELECT nom_p FROM pet WHERE id_user=?');//clef étrangère
+        $req->bindParam (1, $id_user);
+        $req->execute();
+        $data=$req->fetchAll(PDO::FETCH_ASSOC);
+            return $data;
+}
+
+
+    public function updatePet($eau, $nourriture, $fin_sejour, $toilettage, $frequence_sortie, $soins, $box){
+        
         $req=$this->_pdo->prepare('UPDATE pet SET eau=?,nourriture=?, fin_sejour=?, toilettage=?, frequence_sortie=?, soins=?, box=?');
-        $req->bindParam(1,$_eau);
-        $req->bindParam(2, $_nourriture);
-        $req->bindParam(3, $_fin_sejour);
-        $req->bindParam(4, $_toilettage);
-        $req->bindParam(5, $_frequence_sortie);
-        $req->bindParam(6, $_soins);
-        $req->bindParam(7, $_box);
+        $req->bindParam(1, $eau);
+        $req->bindParam(2, $nourriture);
+        $req->bindParam(3, $fin_sejour);
+        $req->bindParam(4, $toilettage);
+        $req->bindParam(5, $frequence_sortie);
+        $req->bindParam(6, $soins);
+        $req->bindParam(7, $box);
         $req->execute();
         $data=$req->fetch(PDO::FETCH_ASSOC);
         return $data;

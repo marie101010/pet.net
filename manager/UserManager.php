@@ -1,21 +1,27 @@
 <?php
 
-namespace msb;
+//namespace msb;
 
 class UserManager{
 
-    private $pdo;
+    private $_pdo;
 
-    public function __construct(\PDO $pdo)
+    public function __construct()
     {
-        $this->pdo = $pdo;
+        $this->set_pdo();
     }
     
-    public function connexion($mdp, $email){
+    public function selectOne($id_u){
 
-$verif = $connexion->prepare('SELECT * FROM user WHERE email=? AND mdp=?');
-$verif->bindParam(1, $email);
-$verif->bindParam(2, $mdp);
-$verif->execute([$email]);
-$repverif = $verif->fetch();
+        $req=$this-> _pdo->prepare('SELECT * FROM user WHERE id_u=:id_u');
+        $req->bindValue (':id_u',$id_u);
+        $req->execute();
+        $data=$req->fetch(\PDO::FETCH_ASSOC);
+            return $data;
+    }
+
+public function set_pdo(){
+    $this->_pdo = new \PDO('mysql:host=localhost;dbname=pet_net;charset=utf8','msb','stagiaire');
+return $this;
+}
 }

@@ -90,7 +90,7 @@ UXPin Index.html:
     echo json_encode($data);
 ------------------------------------------------------------------------
 
-    require_once '../model/manager/PetManager.php';
+    require_once '../manager/PetManager.php';
 $pet=new PetManager();
 $pets=$pet->selectAllPetName($_SESSION['id']);
 <?php foreach ($pets as $value){?>
