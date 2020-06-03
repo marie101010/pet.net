@@ -44,7 +44,7 @@ render('header',['title' => 'Modifier ses informations']);?>
                             <input type="number" min="0" max="10" name="frequence_sortie" id="" class="form-control" placeholder="Entre 0-10" aria-describedby="helpId">
                         <label for="">Soins particuliers:</label>
                             <input type="text" name="soins" id="" class="form-control" placeholder="Soins spécifiques" aria-describedby="helpId">
-                        <label for="">Chambre<small> selon disponibilité</small></label>
+                        <label for="">Chambre<small> (selon disponibilité)</small></label>
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item dropdown">
                                 <select class="custom-select" id ="box">

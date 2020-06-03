@@ -11,7 +11,7 @@ class EventsManager{
         $this->set_pdo();
     }
 
-    public function selectAllPet(){
+    public function selectEvent(){
         require "../src/class/pet.php";
 
         $req=$this-> _pdo->prepare('SELECT * FROM events WHERE id_e=:id_e');

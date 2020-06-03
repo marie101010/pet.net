@@ -13,8 +13,8 @@ render('header',['title' => 'Ses informations']);?>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
                 <select class="custom-select" id ="nom_p">
-                    <option class="dropdown-item" value="1"><? echo '$nom_p' ?></option>
-                    <option class="dropdown-item" value="2">Bosco</option>
+                    <option class="dropdown-item" value="id_pet"><? echo '$nom_p' ?></option>
+                    <option class="dropdown-item" value="id_pet">Bosco</option>
                 </select>
             </li>
         </ul>      

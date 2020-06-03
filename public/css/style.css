@@ -13,6 +13,10 @@ footer {
     height: 100px;
 }
 
+p{
+    font-size: smaller;
+}
+
 .button_co{
     width: 172px;
     height: 41px;
@@ -68,5 +72,26 @@ footer {
     color: #ffffff;
     text-decoration: none solid rgb(255, 255, 255);
     text-align: center;
+}
+
+@font-face {
+    font-family: "G-Roboto Mono-n4";
+    font-display: swap;
+    src: url('../data/fonts/robotomono_v7_L0x5DF4xlVMF-BfR8bXMIghMoX6-XqKC.ttf');
+}
+@font-face {
+    font-family: G-Roboto-n4;
+    font-display: swap;
+    src: url('../data/fonts/roboto_v20_KFOmCnqEu92Fr1Me5WZLCzYlKw.ttf');
+}
+@font-face {
+    font-family: G-Roboto-n5;
+    font-display: swap;
+    src: url('../data/fonts/roboto_v20_KFOlCnqEu92Fr1MmEU9vAx05IsDqlA.ttf');
+}
+@font-face {
+    font-family: G-Roboto-n7;
+    font-display: swap;
+    src: url('../data/fonts/roboto_v20_KFOlCnqEu92Fr1MmWUlvAx05IsDqlA.ttf');
 }
 }
