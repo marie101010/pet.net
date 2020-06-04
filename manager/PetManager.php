@@ -42,9 +42,9 @@ class PetManager{
 }
 
 
-    public function updatePet($eau, $nourriture, $fin_sejour, $toilettage, $frequence_sortie, $soins, $box){
+    public function updatePet($eau, $nourriture, $fin_sejour, $toilettage, $frequence_sortie, $soins, $box, $id_user){
         
-        $req=$this->_pdo->prepare('UPDATE pet SET eau=?,nourriture=?, fin_sejour=?, toilettage=?, frequence_sortie=?, soins=?, box=?');
+        $req=$this->_pdo->prepare('UPDATE pet SET eau=?,nourriture=?, fin_sejour=?, toilettage=?, frequence_sortie=?, soins=?, box=?, update_by=:id_user, update_at= NOW');
         $req->bindParam(1, $eau);
         $req->bindParam(2, $nourriture);
         $req->bindParam(3, $fin_sejour);
@@ -52,6 +52,7 @@ class PetManager{
         $req->bindParam(5, $frequence_sortie);
         $req->bindParam(6, $soins);
         $req->bindParam(7, $box);
+        $req->bindValue(':id_user', $id_user);
         $req->execute();
         $data=$req->fetch(PDO::FETCH_ASSOC);
         return $data;

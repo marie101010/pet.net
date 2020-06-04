@@ -7,8 +7,8 @@ require "../views/header.php";
         <a href="../public/home.php"><img src="../public/Pictures/logoO.png" width="64px" height="69px" alt="logo pattes"></a>
     </div>
 </nav>
-
-<h1>Page introuvable</h1>
-
+    <div class="contrainer">
+        <h1>Page introuvable</h1>
+    </div>
 <?php require "../views/footer.php";
 

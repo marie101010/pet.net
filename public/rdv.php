@@ -1,14 +1,25 @@
 <?php
 session_start();
 
+$id_user=$_SESSION['id_user'];
+
 require "../src/bootstrap.php";
+//require "../views/dropdownlist.php";
+require "../src/class/pet.php";
+require "../manager/EventsManager.php";
+require '../manager/PetManager.php';
 
-$pdo = get_pdo();
-$errors = [];
+$pet = new PetManager();
+$pets = $pet->selectAllName($_SESSION['id_user']); 
 
-render('header',['title' => 'Rendez-vous']);
 
-?>
+$nom_p=$_GET['nom'];
+
+$animal=new PetManager();
+$animaux=$animal->selectOnePet($nom_p);
+$nom_p= $animaux['nom_p'];
+
+render('header',['title' => 'Rendez-vous']);?>
 
 <div class="container">
     <style>
@@ -45,29 +56,22 @@ render('header',['title' => 'Rendez-vous']);
 
 <div class="container">
     <form action="../controller/add_event.php" method="post">
-        <p><strong>Je souhaite prendre un rendez-vous de:</strong></p>
-            <div>
-                <input type="radio" id="15" name="fin_rdv" value="15"><label for="15">15 minutes</label>
-            </div>
-            <div>
-                <input type="radio" id="30" name="fin_rdv" value="30"><label for="30">30 minutes</label>
-            </div>
+
+        <p><strong>Je souhaite prendre un rendez-vous avec:</strong></p>
+        <?php foreach ($pets as $key=>$value){?>
+                        <a class="dropdown-item" href="../public/rdv.php?nom=<?=implode($value) ?>" > <?= $value=implode($value) ?> </a>
+            <?php } ?>
+                <input id="nom_p" name="nom_p", value="<?=$nom_p;?>">
             <br>
-        <p><strong>Avec:</strong></p>
-            <div>
-                <input type="checkbox" id="" name="id_p" value="id_p"><label for="2"> Bosco</label>
-            </div>
-            <div>
-                <input type="checkbox" id="" name="id_p" value="id_p"><label for="1"> Monsieur Moustache</label>
-            </div>
-            <br>
-            <label for="date"><strong>Date:</strong></label>
+            <label for="date"><strong>Date du rendez-vous:</strong></label>
                 <input id="debut_rdv" type="date" required class="form-control" name="debut_rdv" value="">
             <br>
             <label for="start"><strong>Heure de début:</strong></label>
-                <input id="start" type="time" required class="form-control" name="start" placeholder="HH:mm" value="">
+                <input id="start_h" type="time" required class="form-control" name="start_h" placeholder="HH:mm" value="">
                 <br>
-            <button class="button_validate" type="submit" id="envoi">Valider</button>
+            
+</div>
+                <button class="button_validate" type="submit" id="envoi">Valider</button>
             <br>
 
     </form>

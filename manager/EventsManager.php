@@ -21,15 +21,28 @@ class EventsManager{
 
     }
 
-    public function addEvent($fin_rdv, $id_p, $debut_rdv, $start){
-        $req=$this->_pdo->prepare('UPDATE events SET fin_rdv=?, id_pet=?, debut_rdv=?, start=?');
-        $req->bindParam(1, $fin_rdv);
-        $req->bindParam(2, $id_p);
-        $req->bindParam(3, $debut_rdv);
-        $req->bindParam(4, $start);
-        $req->execute();
+    public function addEvent($nom_p, $debut_rdv, $start_h, $fin_rdv){
+        $req=$this->_pdo->prepare('INSERT INTO events (nom_p, debut_rdv, start_h, fin_rdv) VALUES (?, ?, ?, ?)');
+        //$req->bindParam(1, $fin_rdv);
+        $req->bindParam(1, $nom_p);
+        $req->bindParam(2, $debut_rdv);
+        $req->bindParam(3, $start_h);
+        $req->bindParam(4, $fin_rdv);
+        $data= $req->execute();
         $data=$req->fetch(PDO::FETCH_ASSOC);
         return $data;
+/*         if (!$data) {
+            echo "\nPDO::errorInfo():\n";
+            print_r($req->errorInfo());} */
+    }
+
+    
+    public function finRdv($start_h){
+        $minutes_to_add=15;
+        $time=new DateTime($start_h);
+        $time->add(new DateInterval('PT'.$minutes_to_add.'M'));
+        $fin_rdv=$time->format('H:i');
+    return $fin_rdv;
     }
 
     public function set_pdo(){
@@ -37,3 +50,16 @@ class EventsManager{
     return $this;
     }
 }
+/* *    * Crée un évènement au niveau de la base de données
+* @param Event $event
+* @return bool
+
+public function create (Event $event){
+   $statement = $this->pdo->prepare('INSERT INTO events (name, description, start, end) VALUES (?, ?, ?, ?)');
+   return $statement->execute([
+       $event->getName(),
+       $event->getDescription(),
+       $event->getStart()->format('Y-m-d H:i:s'),
+       $event->getEnd()->format('Y-m-d H:i:s'),
+   ]);
+*/

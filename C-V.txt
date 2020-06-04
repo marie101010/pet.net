@@ -149,9 +149,50 @@ $Oneanimal=new Pet($animals);
  
 require '../templates/bases.php';
 -------------------------------------------------------------------------------
-Ajoute minutes:
+TODO Ajoute minutes:
 
 $minutes_to_add=30;
 $time=new DateTime($start);
 $time->add(new DateInterval('PT'.$minutes_to_add.'M'));
 $end=$time->format('H:i');
+
+---------------------------------------------------------------
+TODO Checkbox choix animal pour events
+
+<p><strong>Avec:</strong></p>
+            <div>
+                <input type="checkbox" id="" name="nom_p" value="nom_p"><label for=""></label>
+            </div>
+            <div>
+                <input type="checkbox" id="" name="nom_p" value="nom_p"><label for=""></label>
+            </div>
+            <br>
+
+-----
+        <p><strong> de:</strong></p>
+            <div>
+                <input type="radio" id="15" name="fin_rdv" value="15"><label for="15">15 minutes</label>
+            </div>
+            <div>
+                <input type="radio" id="30" name="fin_rdv" value="30"><label for="30">30 minutes</label>
+            </div>
+--------------------------------------------------------------------------------------
+public function AddEvent($id_user,$date,$start,$end,$id_pet)
+{
+ $req=$this->_db->prepare('INSERT INTO events
+ (date,start,end,created_by,created_at,updated_by,updated_at,pet_id_pet,pet_user_id_user)
+ VALUES 
+ (:date,:start,:end,:created_by,NOW(),:updated_by,NOW(),:pet_id_pet,:pet_user_id_user)');
+ $req->bindValue(':date',$date);
+ $req->bindValue(':start',$start);
+ $req->bindValue(':end',$end);
+ $req->bindValue(':created_by',$id_user);
+ $req->bindValue(':updated_by',$id_user);
+ $req->bindValue(':pet_id_pet',$id_pet);
+ $req->bindValue(':pet_user_id_user',$id_user);
+ $donnee=$req->execute();
+ 
+ if (!$donnee) {
+ echo "\nPDO::errorInfo():\n";
+ print_r($req->errorInfo());}
+}

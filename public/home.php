@@ -24,6 +24,11 @@ render('header',['title' => 'Accueil']);?>
     margin: auto;
     margin-bottom: 32px;
 }
+
+.button_menu:hover{
+    text-decoration: none;
+    color: #138496;
+}
 </style>
 <nav>
     <div class="container">
@@ -37,7 +42,14 @@ render('header',['title' => 'Accueil']);?>
         </div>
     </div>
 </nav>
-
+<div class="d-flex flex-row align-items-center justify-content-between mx-sm-3">
+            <?php if (isset($_GET['success'])) : ?>
+            <div class="container">
+                <div class="alert alert-success">
+                    Le rendez-vous a bien été enregistré.
+                </div>
+            </div>
+            <?php endif; ?>
 
 <div class="container">
         <div class="column">

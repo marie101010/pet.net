@@ -1,11 +1,11 @@
 <?php
 session_start();
 
+$id_user=$_SESSION['id_user'];
+
 require "../src/bootstrap.php";
 require "../views/dropdownlist.php";
 
-$pdo = get_pdo();
-$errors = [];
 
 render('header',['title' => 'Modifier ses informations']);?>
 
@@ -16,7 +16,7 @@ render('header',['title' => 'Modifier ses informations']);?>
 </nav>
             <fieldset>
                 <div class="container"> 
-                    <form action="post" method="post">                      
+                    <form action="../controller/edit_pet.php" method="post">                      
                         <label for="">Eau:</label>
                             <div><input type="text" name="eau"></div>
                         <label for="">Nourriture:</label>
@@ -40,7 +40,7 @@ render('header',['title' => 'Modifier ses informations']);?>
                             </li>
                         </ul> 
 
-                        <a href="home.php"><input type="button" class="button_menu" value="Modifier"input></a>
+                        <a href="home.php"><input type="submit" class="button_menu" value="Modifier"input></a>
 
                     </div>
                 </div>

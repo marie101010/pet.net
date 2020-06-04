@@ -5,7 +5,6 @@ $id_user=$_SESSION['id_user'];
 
 require "../src/bootstrap.php";
 require "../views/dropdownlist.php";
-//require "../manager/PetManager.php";
 require "../src/class/pet.php";
 
 $nom_p=$_GET['nom'];
