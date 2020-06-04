@@ -1,4 +1,4 @@
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+@media only screen and (min-device-width : 320px) and (max-device-width : 1024px) {
 
 html, body {
     height: 100%;
@@ -13,7 +13,7 @@ footer {
     height: 100px;
 }
 
-p{
+text{
     font-size: smaller;
 }
 
@@ -64,6 +64,19 @@ p{
     justify-content: space-between;
     width: 176px;
     height: 56px;
+    padding: 0px 5px;
+    border-radius: 4px;
+    background-color: #17a2b8;
+    font-family: Roboto;
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-align: center;
+}
+
+.button_nav{
+    width: 108px;
+    height: 43px;
     padding: 0px 5px;
     border-radius: 4px;
     background-color: #17a2b8;

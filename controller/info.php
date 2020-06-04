@@ -8,4 +8,4 @@ use PetManager;
 require ('../manager/PetManager.php');
 
 $pet = new PetManager();
-$pets=$pet->selectAllPet($_SESSION['id_u']);
+$pets=$pet->selectAllPets($_SESSION['id_u']);

@@ -27,17 +27,24 @@ render('header',['title' => 'Accueil']);?>
 </style>
 <nav>
     <div class="container">
-        <a href="../public/home.php"><img src="../public/Pictures/logoO.png" width="64px" height="69px" alt="logo pattes"></a>
-        <h1>Pet.net</h1>
+        <div class="row">
+            <div class="col-sm-3">
+                <a href="../public/home.php"><img src="../public/Pictures/logoO.png" width="64px" height="69px" alt="logo pattes"></a>
+            </div>
+            <div class="col-sm-6">
+                <h1>Pet.net</h1>
+            </div>
+        </div>
     </div>
 </nav>
+
 
 <div class="container">
         <div class="column">
             <a href="boxcam.php"><input type="button"  class="button_menu" style= "margin-top:32px;" value="Camera"input></a>
             <a href="rdv.php"><input type="button" class="button_menu" value="Rendez-vous"input></a>
             <a href="geoloc.php"><input type="button" class="button_menu" value="Géolocalisation"input></a>
-            <a href="petinfo.php"><input type="button" class="button_menu" value="Mes informations"input></a>
+            <a href="petinfo.php"><input type="button" class="button_menu" value="Mes animaux"input></a>
         </div>
     </div>
 </div>

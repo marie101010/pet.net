@@ -23,7 +23,7 @@ class PetManager{
 
     }
 
-    public function selectAllPet($id_user){
+    public function selectAllPets($id_user){
 
         $req=$this-> _pdo->prepare('SELECT * FROM pet WHERE id_user=:id_user ');//clef étrangère
         $req->bindValue (':id_user',$id_user);

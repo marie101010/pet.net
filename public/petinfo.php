@@ -1,30 +1,44 @@
 <?php
 session_start();
 
+$id_user=$_SESSION['id_user'];
+
 require "../src/bootstrap.php";
 require "../views/dropdownlist.php";
-//$pdo = get_pdo();
-//$errors = [];
+//require "../manager/PetManager.php";
+require "../src/class/pet.php";
+
+$nom_p=$_GET['nom'];
+
+$animal=new PetManager();
+$animaux=$animal->selectOnePet($nom_p);
+
+//$Oneanimal= new Pet($animaux);
 
 render('header',['title' => 'Ses informations']);?>
 
 
     <div class="container"> 
-        <label for="">Eau: <? echo '$eau';?></label>
         <br>
-        <label for="">Nourriture: <? echo '$nourriture';?></label>
+        <label for=""><b>Eau:</b> <?="". $animaux['eau']; ?></label>
         <br>
-        <label for="">Date de fin: <? echo '$fin_sejour';?></label>
+        <label for=""><b>Nourriture:</b> <?="". $animaux['nourriture'];?></label>
         <br>
-        <label for="">Nombre de toilettage prévu: <? echo '$toilettage';?></label>
+        <label for=""><b>Date de fin:</b> <?="". $animaux['fin_sejour'];?></label>
         <br>
-        <label for="">Nombre de sortie par jour: <? echo '$frequence_sortie';?> par jour</label>
+        <label for=""><b>Nombre de toilettage prévu:</b> <?="". $animaux['toilettage'];?></label>
         <br>
-        <label for="">Soins particuliers: <? echo '$soins';?></label>
+        <label for=""><b>Nombre de sortie:</b> <?="". $animaux['frequence_sortie'] ;?> par jour</label>
         <br>
-        <label for="">Chambre: <? echo '$box';?></label> 
+        <label for=""><b>Soins particuliers: </b><?="". $animaux['soins'];?></label>
+        <br>
+        <label for=""><b>Chambre: </b><?="". $animaux['box'];?></label> 
         <br>
         <a href="edit.php"><input type="button" class="button_menu" value="Modifier ses informations"input></a>
+    </div>
+    <br>
+    <div class="container">
+
     </div>
 
 
