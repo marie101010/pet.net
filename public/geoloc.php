@@ -5,7 +5,7 @@ require "../src/bootstrap.php";
 require "../views/dropdownlist.php";
 
 render('header',['title' => 'Où est-il?']);
-
+//render ('dropdownlist',['url'=> '../public/geoloc.php<?isset($url);
 ?>
 <nav>
     <div class="container">

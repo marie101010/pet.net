@@ -42,20 +42,25 @@ class PetManager{
 }
 
 
-    public function updatePet($eau, $nourriture, $fin_sejour, $toilettage, $frequence_sortie, $soins, $box, $id_user){
+
+
+    public function updatePet($eau, $nourriture, $toilettage, $frequence_sortie, $soins, $box,$id_pet){
         
-        $req=$this->_pdo->prepare('UPDATE pet SET eau=?,nourriture=?, fin_sejour=?, toilettage=?, frequence_sortie=?, soins=?, box=?, update_by=:id_user, update_at= NOW');
+        $req=$this->_pdo->prepare('UPDATE pet SET eau=?,nourriture=?, toilettage=?, frequence_sortie=?, soins=?, box=?, update_by=?, update_at= NOW() WHERE id_pet=?');
         $req->bindParam(1, $eau);
         $req->bindParam(2, $nourriture);
-        $req->bindParam(3, $fin_sejour);
-        $req->bindParam(4, $toilettage);
-        $req->bindParam(5, $frequence_sortie);
-        $req->bindParam(6, $soins);
-        $req->bindParam(7, $box);
-        $req->bindValue(':id_user', $id_user);
-        $req->execute();
-        $data=$req->fetch(PDO::FETCH_ASSOC);
-        return $data;
+        $req->bindParam(3, $toilettage);
+        $req->bindParam(4, $frequence_sortie);
+        $req->bindParam(5, $soins);
+        $req->bindParam(6, $box);
+        $req->bindValue(7, 'user');
+        $req->bindValue(8, $id_pet);
+        $data=$req->execute();
+        if (!$data) {
+            echo "\nPDO::errorInfo():\n";
+            print_r($req->errorInfo());}
+        /* $data=$req->fetch(PDO::FETCH_ASSOC);
+        return $data; */
     }
 
     public function set_pdo(){
