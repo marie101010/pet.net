@@ -4,11 +4,12 @@
 
 class Pet{
     
-    private $_id_p;
-    private $_id_u;
+    private $_id_pet;
+    private $_id_user;
     private $_nom_p;
     private $_date_p;
     private $_puce;
+    private $_espece;
     private $_soins;
     private $_sterelise;
     private $_nourriture;
@@ -35,18 +36,18 @@ class Pet{
     /**
      * Get the value of _id_p
      */ 
-    public function get_id_p()
+    public function get_id_pet()
     {
-        return $this->_id_p;
+        return $this->_id_pet;
     }
     
 
     /**
      * Get the value of _id_u
      */ 
-    public function get_id_u()
+    public function get_id_user()
     {
-        return $this->_id_u;
+        return $this->_id_user;
     }
 
     /**
@@ -71,6 +72,14 @@ class Pet{
     public function get_puce()
     {
         return $this->_puce;
+    }
+
+        /**
+     * Get the value of espece
+     */ 
+    public function get_espece()
+    {
+        return $this->_espece;
     }
 
     /**
@@ -430,6 +439,18 @@ class Pet{
     public function set_update_at($_update_at)
     {
         $this->_update_at = $_update_at;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of _espece
+     *
+     * @return  self
+     */ 
+    public function set_espece($_espece)
+    {
+        $this->_espece = $_espece;
 
         return $this;
     }

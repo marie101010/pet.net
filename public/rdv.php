@@ -23,22 +23,31 @@ render('header',['title' => 'Rendez-vous']);?>
 
 <div class="container">
     <style>
-        .button_validate{
-            width: 82px;
-            height: 38px;            
-            display: flex;
-            justify-content: flex-end;
-            align-content: flex-end;
+        .button_live{
+            width: 206px;
+            height: 43px;
             padding: 0px 5px;
-            border: 1px solid #c8c8c8;
             border-radius: 4px;
             background-color: #17a2b8;
-
             font-family: Roboto;
-            font-size: 16px;
+            font-size: 18px;
             color: #ffffff;
             text-decoration: none solid rgb(255, 255, 255);
             text-align: center;
+        }
+        .button_validate{
+            float: right;
+            width: 100px;
+            height: 43px;
+            padding: 0px 5px;
+            border-radius: 4px;
+            background-color: #17a2b8;
+            font-family: Roboto;
+            font-size: 18px;
+            color: #ffffff;
+            text-decoration: none solid rgb(255, 255, 255);
+            text-align: center;
+
         }
         .navbarrdv{
             display: flex;
@@ -50,7 +59,7 @@ render('header',['title' => 'Rendez-vous']);?>
 <div class="container">
     <div class="navbarrdv">
             <a href="../public/home.php"><img src="../public/Pictures/logoO.png" width="64px" height="69px" alt="logo pattes"></a>
-            <a href="live.php"><input type="button" class="button_validate" value="Accéder au live"input></a>
+            <a href="live.php"><input type="button" class="button_live" value="Accéder au live"input></a>
     </div>
 </div>
 
@@ -76,6 +85,7 @@ render('header',['title' => 'Rendez-vous']);?>
 
     </form>
 </div>
+
 
 
 

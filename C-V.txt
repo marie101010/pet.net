@@ -196,3 +196,11 @@ public function AddEvent($id_user,$date,$start,$end,$id_pet)
  echo "\nPDO::errorInfo():\n";
  print_r($req->errorInfo());}
 }
+
+
+-------------------------------------------------------
+<div class="alert alert-success" role="alert">
+  <p>Dernière visite faite à HH:initial.</p>
+  <hr>
+  <p> Par: 
+</div>

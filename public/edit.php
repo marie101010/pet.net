@@ -19,46 +19,70 @@ $nom_p= $animaux['nom_p'];
 
 render('header',['title' => 'Modifier ses informations']);?>
 
+<style>
+    .button_menu{
+    width: 176px;
+    height: 56px;
+    padding: 0px 5px;
+    border-radius: 4px;
+    background-color: #17a2b8;
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-align: center;
+    float: right;
+    justify-content: flex-end;
+}
 
-    <div class="container">
-        <h1>Modifier les informations</h1>
-    </div>
-</nav>
-            <fieldset>
-                <div class="container"> 
-                    <form action="../controller/edit_pet.php" method="post">                      
-                    <?php foreach ($pets as $key=>$value){?>
-                        <a class="dropdown-item" href="../public/edit.php?nom=<?=implode($value) ?>" > <?= $value=implode($value) ?> </a>
-                        <?php } ?>
-                            <input id="nom_p" name="nom_p", value="<?=$nom_p;?>">
-                        <br>
-                        <label for="">Eau:</label>
-                            <div><input type="text" name="eau"></div>
-                        <label for="">Nourriture:</label>
-                            <div><input type="text" name="nourriture"></div>
-                        <label for="">Nombre de toilettage prévu:</label>
-                            <input type="number" min="0" max="10" name="toilettage" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                        <label for="">Nombre de sortie par jour:</label>
-                            <input type="number" min="0" max="10" name="frequence_sortie" id="" class="form-control" placeholder="Entre 0-10" aria-describedby="helpId">
-                        <label for="">Soins particuliers:</label>
-                            <input type="text" name="soins" id="" class="form-control" placeholder="Soins spécifiques" aria-describedby="helpId">
-                        <label for="">Chambre<small> (selon disponibilité)</small></label>
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item dropdown">
-                                <select class="custom-select" name= "box" id ="box">
-                                    <option value="1">Chambre simple</option>
-                                    <option value="2">Chambre de luxe<small>(+10€)</small></option>
-                                    <option value="3">Duplex <small>(+15€)</small></option>
-                                </select>
-                            </li>
-                        </ul> 
+</style>
 
-                        <a href="home.php"><input type="submit" class="button_menu" value="Modifier"input></a>
+<div class="container" style="margin-top:10px;">
+    <div class="row">
+        <div class="col-sm-6">
+            <a href="../public/home.php"><img src="../public/Pictures/logoO.png" width="64px" height="69px" alt="logo pattes"></a></div></div></div>
+    <fieldset>
+        <div class="container"> 
+            <form action="../controller/edit_pet.php" method="post">                      
+            <label for="">Modifier les informations de:</label>
+            <div class="col-sm-6">  
+            <div class="btn btn-info dropdown-toggle">
+                <?php foreach ($pets as $key=>$value){?>
+                <a class="dropdown-item" href="../public/edit.php?nom=<?=implode($value) ?>" > <?= $value=implode($value) ?> </a>
+                <?php } ?>
+            </div>
 
-                    </div>
-                </div>
-            </fieldset>
-        </form>
+                <br>
+                    <input id="nom_p" name="nom_p", value="<?=$nom_p;?>" placeholder="Choisir au dessus l'animal" readonly>
+                <br>
+                <br>
+                <label for="">Eau:</label>
+                    <div><input type="text" name="eau" required></div>
+                <label for="">Nourriture:</label>
+                    <div><input type="text" name="nourriture" required></div>
+                <label for="">Nombre de toilettage prévu:</label>
+                    <input type="number" min="0" max="10" required name="toilettage" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                <label for="">Nombre de sortie par jour:</label>
+                    <input type="number" min="0" max="10" required name="frequence_sortie" id="" class="form-control" placeholder="Entre 0-10" aria-describedby="helpId">
+                <label for="">Soins particuliers:</label>
+                    <input type="text" name="soins" id="" required class="form-control" placeholder="Soins spécifiques" aria-describedby="helpId">
+                <label for="">Chambre<small> (selon disponibilité)</small></label>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <select class="custom-select" name= "box" id ="box">
+                            <option value="Chambre simple">Chambre simple</option>
+                            <option value="Chambre de luxe">Chambre de luxe<small>(+10€)</small></option>
+                            <option value="Duplex">Duplex <small>(+15€)</small></option>
+                        </select>
+                    </li>
+                </ul> 
+                <br>
+                <a href="home.php"><input type="submit" class="button_menu" value="Modifier"input></a>
+                <br>
+                <br>
+            </div>
+        </div>
+    </fieldset>
+</form>
 
 
     <?php render('footer'); ?>

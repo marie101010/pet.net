@@ -19,4 +19,4 @@ $id_pet=$animal2['id_pet'];
 
 
 $animaux=$animal->updatePet($eau, $nourriture, $toilettage, $frequence_sortie, $soins, $box, $id_pet);
-
+header ('Location: ../public/petinfo.php?success=1');

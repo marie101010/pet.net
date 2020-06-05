@@ -35,7 +35,7 @@ require "../src/bootstrap.php";?>
             border-radius: 4px;
             background-color: #17a2b8;
             font-family: Roboto;
-            font-size: 16px;
+            font-size: 18px;
             color: #ffffff;
             text-decoration: none solid rgb(255, 255, 255);
             text-align: center;
