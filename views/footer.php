@@ -4,7 +4,7 @@
         align-items: flex-end;
         justify-content: space-around;
         width: 176px;
-        height: 56px;
+        height: 30px;
         padding: 0px 5px;
         border-radius: 4px;
         background-color: #17a2b8;
@@ -15,10 +15,10 @@
         text-align: center;
         display: block;
         margin: auto;
-        margin-top: 32px;
+        margin-top: 10px;
 }
 .footer {
-    position: fixed;
+    
     left: 0;
     bottom: 0;
     width: 100%;
