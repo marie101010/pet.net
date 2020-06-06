@@ -29,8 +29,6 @@ render('header',['title' => 'Accueil']); ?>
 }
 .center{
     justify-content: center;
-    text-align: center;
-    float: center;
     margin: auto;
     display: flex;
 }
@@ -40,13 +38,17 @@ render('header',['title' => 'Accueil']); ?>
 }
 </style>
         
-<div class="container">
-    <div class="row">
-        <div class="col-sm-6" display:flex;>
-            <a href="../public/home.php"><img src="../public/Pictures/logoO.png" width="64px" height="69px" alt="logo pattes"></a></div>
-            <h1 class="center">Pet.net</h1>
+<nav>
+    <div class="container" border-top="3px">
+        <div class="row">
+            <div class="col-sm-6">
+                <a href="../public/home.php"><img src="../public/Pictures/logoO.png" width="64px" height="69px" alt="logo pattes"></a>
+            </div>
         </div>
     </div>
+</nav>
+<div class="container">
+    <h1 style="text-align: center;">Pet.net</h1>
 </div>
 
         <div class="succes">
