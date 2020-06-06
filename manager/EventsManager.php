@@ -22,18 +22,23 @@ class EventsManager{
     }
 
     public function addEvent($nom_p, $debut_rdv, $start_h, $fin_rdv){
-        $req=$this->_pdo->prepare('INSERT INTO events (nom_p, debut_rdv, start_h, fin_rdv) VALUES (?, ?, ?, ?)');
+        $req=$this->_pdo->prepare('INSERT INTO events (nom_p, debut_rdv, start_h, fin_rdv, created_by, created_at, update_by, update_at) VALUES (?, ?, ?, ?,?, NOW(), ?, NOW())');
         //$req->bindParam(1, $fin_rdv);
         $req->bindParam(1, $nom_p);
         $req->bindParam(2, $debut_rdv);
         $req->bindParam(3, $start_h);
         $req->bindParam(4, $fin_rdv);
+        $req->bindParam(5, 'user');
+        $req->bindParam(4, $created_at);
+        $req->bindParam(4, $update_by);
+        $req->bindParam(4, $update_at);
+
         $data= $req->execute();
-        $data=$req->fetch(PDO::FETCH_ASSOC);
-        return $data;
-/*         if (!$data) {
+/*         $data=$req->fetch(PDO::FETCH_ASSOC);
+        return $data; */
+        if (!$data) {
             echo "\nPDO::errorInfo():\n";
-            print_r($req->errorInfo());} */
+            print_r($req->errorInfo());}
     }
 
     
