@@ -43,7 +43,7 @@ render('header',['title' => 'Chambre']);?>
             <a href="../public/home.php"><img src="../public/Pictures/logoO.png" width="64px" height="69px" alt="logo pattes"></a></div>
         <div class="col-sm-6">    
             <?php foreach ($pets as $key=>$value){?>
-            <a class="dropdown-item" href="../public/boxcam.php?nom=<?=implode($value) ?>" > <?= $value=implode($value) ?> </a>
+            <a class="dropdown-item" href="../public/boxcam.php?nom=<?=implode($value) ?>" > <?= $value=implode($value) ?>  </a>
             <?php } ?>
         </div>
     </div>
@@ -57,6 +57,9 @@ render('header',['title' => 'Chambre']);?>
     <div class="row" style="justify-content:space-around;">
         <a href="gardencam.php"><input type="button" class="button_nav" value="Voir le jardin"input></a>
         <a href="petinfo.php"><input type="button" class="button_nav" value="Ses informations"input></a>
+        <br>
+        <br>
+        <br>
     </div>
 </div>
 

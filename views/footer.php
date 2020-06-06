@@ -18,20 +18,23 @@
         margin-top: 10px;
 }
 .footer {
-    
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #17a2b8;
+    height: auto;
+    background-color: #138496;
     text-align: center;
 }
     </style>
     <div class="footer">
         <div class="container">
             <div class="row">
+                
                 <input type="button" class="button_footer" onclick="window.location.href='http://www.aristide-hotel.com/pages/contact'; " value="Contactez-nous"</input>
                 <input type="button" class="button_footer" onclick="window.location.href='http://www.laminouterie.fr/tarifs'; " value="Notre centre"</input>
-            </div>
+                </div>
+                <p><i><small>Design by MSB© 2020</small></i></p>
         </div>
     </div>
 

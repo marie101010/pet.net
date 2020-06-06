@@ -21,8 +21,9 @@ render('header',['title' => 'Modifier ses informations']);?>
 
 <style>
     .button_menu{
-    width: 176px;
+    width: 150px;
     height: 56px;
+    margin-bottom: 10px;
     padding: 0px 5px;
     border-radius: 4px;
     background-color: #17a2b8;
@@ -90,6 +91,9 @@ render('header',['title' => 'Modifier ses informations']);?>
         </form>
     </div>
 </div>
+<br>
+                        <br>                        
+                        <br>
 
 
     <?php render('footer'); ?>

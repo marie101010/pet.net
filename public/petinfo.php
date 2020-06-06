@@ -25,7 +25,7 @@ render('header',['title' => 'Ses informations']);?>
 
 <style>
     .button_menu{
-    width: 176px;
+    width: fit-content;
     height: 56px;
     padding: 0px 5px;
     border-radius: 4px;
@@ -46,7 +46,7 @@ render('header',['title' => 'Ses informations']);?>
         <div class="col-sm-6">
             <a href="../public/home.php"><img src="../public/Pictures/logoO.png" width="64px" height="69px" alt="logo pattes"></a></div>
         <div class="col-sm-6">  
-            <div class="btn btn-info dropdown-toggle">Vos animaux
+            <div class="btn btn-info dropdown-toggle">
                 <?php foreach ($pets as $key=>$value){?>
                 <a class="dropdown-item" button="btn btn-info dropdown-toggle" href="../public/petinfo.php?nom=<?=implode($value) ?>" > <?= $value=implode($value) ?> </a>
                 <?php } ?>
@@ -57,7 +57,7 @@ render('header',['title' => 'Ses informations']);?>
     <div class="alert alert-success" role="alert" style="width: fit-content;">
         <p>Dernière visite faite à 14h16 par Roger:</p>
         <hr>
-        <p><?="". $animaux['nom_p'];?> était en train de dormir dans sa couverture. 
+        <p><i>"<?="". $animaux['nom_p'];?> dormait tranquillement dans sa couverture. "</i></p>
     </div>
 </div>
 
@@ -88,6 +88,7 @@ render('header',['title' => 'Ses informations']);?>
     <br>
     <a href="edit.php"><input type="button" class="button_menu" value="Modifier ses informations"input></a>
 </div>
+<br>
 <br>
 
 
