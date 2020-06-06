@@ -91,8 +91,8 @@ render('header',['title' => 'Modifier ses informations']);?>
     </div>
 </div>
 <br>
-                        <br>                        
-                        <br>
+<br>                        
+<br>
 
 
     <?php render('footer'); ?>

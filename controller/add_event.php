@@ -10,11 +10,6 @@ $start_h=($_POST['start_h']);
 
 $event = new EventsManager();
 $fin_rdv = $event->finRdv($start_h);
-
-if($events=$event->addEvent($nom_p, $debut_rdv, $start_h,$fin_rdv)){
-    
-    header ('Location: ../public/home.php?success=1');
-}else{
-    header('Location: ../public/home.php?success=1');
-}
+$events=$event->addEvent($nom_p, $debut_rdv, $start_h,$fin_rdv);
+header ('Location: ../public/home.php?success=1');
 

@@ -1,7 +1,6 @@
 <?php
 
 //namespace msb;
-//require "../src/bootstrap.php";
 
 
 class PetManager{
@@ -13,6 +12,10 @@ class PetManager{
         $this->set_pdo();
     }
 
+/**
+ * récupère les informations de la table 'pet' pour un animal grâce à son nom
+ * 
+ */
     public function selectOnePet($nom_p){
 
             $req=$this-> _pdo->prepare('SELECT * FROM pet WHERE nom_p=:nom_p');
@@ -20,9 +23,12 @@ class PetManager{
             $req->execute();
             $data=$req->fetch(\PDO::FETCH_ASSOC);
                 return $data;
-
     }
 
+    /**
+ * récupère les informations de la table 'pet' pour tous les animaux d'un utilisateur via son id_user
+ * 
+ */
     public function selectAllPets($id_user){
 
         $req=$this-> _pdo->prepare('SELECT * FROM pet WHERE id_user=:id_user ');//clef étrangère
@@ -32,6 +38,10 @@ class PetManager{
             return $data;
 }
 
+/**
+ * récupère les noms de la table 'pet' pour tous les animaux d'un utilisateur via son id_user
+ * 
+ */
     public function selectAllName($id_user){
 
         $req=$this-> _pdo->prepare('SELECT nom_p FROM pet WHERE id_user=?');//clef étrangère
@@ -41,8 +51,10 @@ class PetManager{
             return $data;
 }
 
-
-
+/**
+ * Modifie les informations concernant les soins.
+ * 
+ */
 
     public function updatePet($eau, $nourriture, $toilettage, $frequence_sortie, $soins, $box,$id_pet){
         
@@ -62,6 +74,11 @@ class PetManager{
         /* $data=$req->fetch(PDO::FETCH_ASSOC);
         return $data; */
     }
+
+/**
+ * connexion à la base de données
+ * 
+ */
 
     public function set_pdo(){
         $this->_pdo = new PDO('mysql:host=localhost;dbname=pet_net;charset=utf8','msb','stagiaire');

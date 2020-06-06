@@ -10,7 +10,7 @@ render('header',['title' => 'Jardin']);?>
 .button_nav{
     width: 175px;
     height: 43px;
-    padding: 0px 5px;    
+    padding: 0px 5px;
     display: block;
     margin: auto;
     border-radius: 4px;
@@ -22,7 +22,6 @@ render('header',['title' => 'Jardin']);?>
     display: block;
     margin: auto;
 
-
 }
 .video{
     margin: auto; 
@@ -31,11 +30,12 @@ render('header',['title' => 'Jardin']);?>
 </style>
 
 <nav>
-<div class="container" border-top="3px">
-    <div class="row">
-        <div class="col-sm-6">
-            <a href="../public/home.php"><img src="../public/Pictures/logoO.png" width="64px" height="69px" alt="logo pattes"></a></div>
-
+    <div class="container" border-top="3px">
+        <div class="row">
+            <div class="col-sm-6">
+                <a href="../public/home.php"><img src="../public/Pictures/logoO.png" width="64px" height="69px" alt="logo pattes"></a>
+            </div>
+        </div>
     </div>
 </nav>
     

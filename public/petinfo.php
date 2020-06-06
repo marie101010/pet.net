@@ -10,15 +10,10 @@ require '../manager/PetManager.php';
 $pet = new PetManager();
 $pets = $pet->selectAllName($_SESSION['id_user']);
 
-
 $nom_p=$_GET['nom'];
 
 $animal=new PetManager();
 $animaux=$animal->selectOnePet($nom_p);
-
-
-
-//$Oneanimal= new Pet($animaux);
 
 render('header',['title' => 'Ses informations']);?>
 
@@ -48,12 +43,11 @@ render('header',['title' => 'Ses informations']);?>
         <div class="col-sm-6">  
             <div class="btn btn-info">
                 <?php foreach ($pets as $key=>$value){?>
-                <a class="dropdown-item" href="../public/petinfo.php?nom=<?=implode($value) ?>" > <?= $value=implode($value) ?> </a>
+                <a class="dropdown-item" href="../public/petinfo.php?nom=<?=implode($value) ?>"><?= $value=implode($value) ?> </a>
                 <?php } ?>
             </div>
+        </div>
     </div>
-    </div>
-
     <div class="alert alert-success" role="alert" style="width: fit-content;">
         <p>Dernière visite faite à 14h16 par Roger:</p>
         <hr>
@@ -61,14 +55,15 @@ render('header',['title' => 'Ses informations']);?>
     </div>
 </div>
 
-    <div class="Succes">
-            <?php if (isset($_GET['success'])) : ?>
-            <div class="container">
-                <div class="alert alert-success">
-                    Les informations ont été envoyées à notre équipe soignante.
-                </div>
+<div class="Succes">
+        <?php if (isset($_GET['success'])) : ?>
+        <div class="container">
+            <div class="alert alert-success">
+                Les informations ont été envoyées à notre équipe soignante.
             </div>
-            <?php endif; ?> 
+        </div>
+        <?php endif; ?>
+</div>
 
 
 <div class="container"> 

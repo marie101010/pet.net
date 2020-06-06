@@ -67,9 +67,10 @@ render('header',['title' => 'Rendez-vous']);?>
     <form action="../controller/add_event.php" method="post">
 
         <p><strong>Je souhaite prendre un rendez-vous avec:</strong></p>
+        <div class="btn btn-info">
         <?php foreach ($pets as $key=>$value){?>
-                        <a class="dropdown-item" href="../public/rdv.php?nom=<?=implode($value) ?>" > <?= $value=implode($value) ?> </a>
-            <?php } ?>
+                        <a class="dropdown-item"  href="../public/rdv.php?nom=<?=implode($value) ?>" > <?= $value=implode($value) ?> </a>
+            <?php } ?></div>
                 <input id="nom_p" name="nom_p", value="<?=$nom_p;?>">
             <br>
             <label for="date"><strong>Date du rendez-vous:</strong></label>

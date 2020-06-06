@@ -26,15 +26,18 @@
     background-color: #138496;
     text-align: center;
 }
+a{
+    color: black;
+}
     </style>
     <div class="footer">
         <div class="container">
             <div class="row">
                 
-                <input type="button" class="button_footer" onclick="window.location.href='http://www.aristide-hotel.com/pages/contact'; " value="Contactez-nous"</input>
-                <input type="button" class="button_footer" onclick="window.location.href='http://www.laminouterie.fr/tarifs'; " value="Notre centre"</input>
+                <input type="button" class="button_footer" onclick="window.location.href='../public/Pictures/Contactez-nous.pdf'; " value="Contactez-nous"</input>
+                <input type="button" class="button_footer" onclick="window.location.href='../public/Pictures/Notre centre.pdf'; " value="Notre centre"</input>
                 </div>
-                <p><i><small>Design by MSB© 2020</small></i></p>
+                <p><i><small> Design by <a href='https://www.linkedin.com/in/marie-behaegel/'> MSB©</a> 2020</small></i></p>
         </div>
     </div>
 
