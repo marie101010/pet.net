@@ -35,7 +35,8 @@ $animaux=$animal->selectOnePet($nom_p);
     <div class="row">
         <div class="col-sm-6">
             <a href="../public/home.php"><img src="../public/Pictures/logoO.png" width="64px" height="69px" alt="logo pattes"></a></div>
-        <div class="col-sm-6">    
+        <div class="col-sm-6">  
+        <div class="btn btn-info">
             <?php foreach ($pets as $key=>$value){?>
             <a class="dropdown-item" href="../public/geoloc.php?nom=<?=implode($value) ?>" > <?= $value=implode($value) ?> </a>
             <?php } ?>

@@ -45,9 +45,8 @@ render('header',['title' => 'Modifier ses informations']);?>
             <div class="container"> 
                 <div class="column">
                     <div class="alert alert-dismissible alert-warning">
-                        <button type="button" class="close" data-dismiss="alert">&times;</button>
                         <h4 class="alert-heading">Attention!</h4>
-                        <p class="mb-0">Des coûts supplémentaires peuvent s'appliquer.<a href="#" class="alert-link"> Consulter la grille tarifaire.</a></p>
+                        <p class="mb-0">Des frais supplémentaires peuvent s'appliquer.<a href="#" class="alert-link"> Consulter la grille tarifaire.</a></p>
                         </div>
                     <form action="../controller/edit_pet.php" method="post">                      
                     <label for="">Modifier les informations de:</label>
